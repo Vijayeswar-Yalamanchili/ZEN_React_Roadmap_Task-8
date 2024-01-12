@@ -24,7 +24,7 @@ function CartCard() {
                        quantity<=0 ? 0: setQuantity(quantity-1);
                     }
 
-                    return <>
+                    return <div key={i}>
                         <div className="card mb-5 border border-secondary" style={{ minWidth: '540px'}}>
                             <div className="row g-0">
                                 <div className="col-md-3">
@@ -76,7 +76,7 @@ function CartCard() {
                                 </div>
                             </div>                      
                         </div>
-                    </>
+                    </div>
                 })
             }
         </div>        
