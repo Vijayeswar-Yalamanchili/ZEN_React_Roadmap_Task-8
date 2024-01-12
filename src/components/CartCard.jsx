@@ -6,13 +6,12 @@ function CartCard() {
     // let {product,setProduct} = useContext(UserContext)
     let contextData =  useContext(UserContext)
     let dispatch = useDispatch();
-    let product = useSelector(state => contextData.product)
-    console.log(product);
+    let product = useSelector(() => contextData.product)
+    // console.log(product);
     return <>
         <div className="container">
             {
                 product.map((e,i)=>{
-
                     const discountPrice = Math.round(e.price * (e.discountPercentage/100))
                     const [quantity, setQuantity] = useState(1);
 

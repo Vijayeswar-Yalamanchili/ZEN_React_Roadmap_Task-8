@@ -5,7 +5,7 @@ export const CartSlice = createSlice({
     initialState : [],
     reducers : {
         saveAllCarts : (state,action) => {
-            console.log(state);
+            // console.log(state);
             return action.payload
         }
     }
