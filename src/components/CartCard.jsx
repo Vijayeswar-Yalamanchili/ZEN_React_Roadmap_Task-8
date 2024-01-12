@@ -1,8 +1,13 @@
 import React, {useState, useContext} from 'react'
 import { UserContext } from '../utils/UserContextComponent'
+import { useSelector,useDispatch } from 'react-redux';
 
 function CartCard() {
-    let {product,setProduct} = useContext(UserContext)
+    // let {product,setProduct} = useContext(UserContext)
+    let contextData =  useContext(UserContext)
+    let dispatch = useDispatch();
+    let product = useSelector(state => contextData.product)
+    console.log(product);
     return <>
         <div className="container">
             {
@@ -16,7 +21,7 @@ function CartCard() {
                     }
                 
                     const removeQuantity = () => {
-                        setQuantity(quantity-+1)
+                       quantity<=0 ? 0: setQuantity(quantity-1);
                     }
 
                     return <>
